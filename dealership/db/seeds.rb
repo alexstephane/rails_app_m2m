@@ -25,8 +25,12 @@ require 'faker'
 
     # Faker::Vehicle.make_and_model
 
+    # 10.times do 
+    #     Inventory.create(make: Faker::Vehicle.make, model: Faker::Vehicle.model)
+    # end
+
     10.times do 
-        Inventory.create(make: Faker::Vehicle.make, model: Faker::Vehicle.model)
+        Car.create(make: Faker::Vehicle.make, model: Faker::Vehicle.model)
     end
                   
 

@@ -10,10 +10,18 @@ class DealersController < ApplicationController
     end
 
     def new 
+        @dealer= Dealer.new
     end
 
     def create 
+        name= params["dealer"]["name"]
+        dealer= Dealer.create(name:name)
+        redirect_to dealer_path(dealer)
     end
+
+    
+
+
     def update 
     end
     def destroy 
