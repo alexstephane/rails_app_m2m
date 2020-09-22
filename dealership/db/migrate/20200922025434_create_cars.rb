@@ -5,7 +5,7 @@ class CreateCars < ActiveRecord::Migration[6.0]
    
       t.string :model
 
-      t.belongs_to :dearler
+      t.belongs_to :dealer 
       
 
       t.timestamps

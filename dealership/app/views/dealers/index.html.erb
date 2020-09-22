@@ -1,3 +1,4 @@
-<%@dealers.each do |dealer|%>
-  <li>  <%=link_to dealer.name%></li>
+
+<% @dealers.each do |dealer|%>
+  <li>  <%=link_to dealer.name, dealer_path(dealer.id) %></li>
 <%end%>

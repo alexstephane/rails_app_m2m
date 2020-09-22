@@ -12,14 +12,18 @@ require 'faker'
 # jim=Customer.create(name:"Jim")
 
 
-                Customer.destroy_all
+    Customer.destroy_all
+    Car.destroy_all 
+    Dealer.destroy_all
+    CustomerDealer.destroy_all
     #new_name = Faker::Name.name
+    
     10.times do 
         Customer.create(name: Faker::Name.name)
     end
 
     
-    10.times do 
+     10.times do 
         Dealer.create(name: Faker::Company.name)
     end
 
@@ -30,8 +34,10 @@ require 'faker'
     # end
 
     10.times do 
-        Car.create(make: Faker::Vehicle.make, model: Faker::Vehicle.model)
+        Car.create(make: Faker::Vehicle.make, model: Faker::Vehicle.model, dealer_id:  Dealer.all.sample.id)
     end
-                  
 
-
+    10.times do 
+      
+        CustomerDealer.create(dealer_id: Dealer.all.sample.id , customer_id: Customer.all.sample.id)
+    end
