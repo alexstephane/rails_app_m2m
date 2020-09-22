@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  get '/about', to: "about#index"
+  get '/welcome', to: "welcome#index"
+
   resources :cars
   resources :dealers
   resources :customers
   resources :inventories
 
-
+  # lsof -wni tcp:3000
 
 
   

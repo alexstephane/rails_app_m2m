@@ -18,18 +18,21 @@ class CarsController < ApplicationController
         @car= Car.find(params[:id])
 
     end
+    
     def create 
         make = params["car"]["make"]
         model = params['car']["model"]
+
         make_model= Car.create(make:make, model:model)
-        redirect_to cars_path()
+
+        redirect_to cars_path(make_model)
     end
     
     def update 
 
-        @car= Car.find(params[:id])
-        @car.update(car_params)
-        redirect_to car_path(@car)
+        # @car= Car.find(params[:id])
+        # @car.update(car_params)
+        # redirect_to car_path(@car)
     end
 
 
